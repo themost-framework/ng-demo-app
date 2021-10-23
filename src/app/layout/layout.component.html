@@ -1,0 +1,59 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
+      <a class="navbar-brand" href="#">Starter</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item d-none">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown" dropdown>
+            <a id="button-basic" dropdownToggle type="button" class="btn btn-default text-white dropdown-toggle"
+          aria-controls="dropdown-basic">
+    Navigate <span class="caret"></span>
+  </a>
+            <div class="dropdown-menu" *dropdownMenu aria-labelledby="dropdown01">
+              <a class="dropdown-item" [routerLink]="['/customers']">Customers</a>
+              <a class="dropdown-item" [routerLink]="['/orders']">Orders</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" [routerLink]="['/products']">Products</a>
+            </div>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0" *ngIf="user$ | async as user">
+          <ng-container [ngSwitch]="user.name !== 'anonymous'">
+              <ng-container *ngSwitchCase="false">
+                  <a class="btn btn-outline-light my-2 my-sm-0" [routerLink]="['/auth/login']">Login</a>
+              </ng-container>
+              <ng-container *ngSwitchCase="true">
+                <a class="ml-2 btn btn-outline-warning my-2 my-sm-0" [routerLink]="['/auth/logout']">Logout {{ user.name }}</a>
+              </ng-container>
+          </ng-container>
+        </form>
+
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      <router-outlet></router-outlet>
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+    <script src="../../assets/js/vendor/popper.min.js"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+  </body>

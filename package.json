@@ -1,5 +1,5 @@
 {
-  "name": "test-ngrx",
+  "name": "ng-demo-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -20,7 +20,13 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
+    "@ngrx/store": "^6.1.2",
+    "@themost/angular": "^6.5.2",
+    "@themost/client": "^2.5.5",
+    "@themost/xml": "^2.5.1",
+    "bootstrap": "^4.6.0",
     "core-js": "^2.5.4",
+    "ngx-bootstrap": "^4.3.0",
     "rxjs": "~6.2.0",
     "zone.js": "~0.8.26"
   },
