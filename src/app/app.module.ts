@@ -7,19 +7,25 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { StoreModule } from '@ngrx/store';
 import { MostModule } from '@themost/angular';
 import { AuthModule } from '@themost/angular';
+import { CustomerListComponent } from './customer-list/customer-list.component';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
-    LayoutComponent
+    LayoutComponent,
+    CustomerListComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
+    InfiniteScrollModule,
     BsDropdownModule.forRoot(),
     StoreModule.forRoot({}),
     MostModule.forRoot({
       // use runkit endpoint
-      base: 'https://themost-test-api-593pg070eky4.runkit.sh/api/',
+      base: 'http://localhost:8080/api/',
       options: {
         useMediaTypeExtensions: false,
         useResponseConversion: true
@@ -27,12 +33,12 @@ import { AuthModule } from '@themost/angular';
     }),
     AuthModule.forRoot({
       // use runkit endpoint
-      login: 'https://themost-test-api-593pg070eky4.runkit.sh/auth/login',
+      login: 'http://localhost:8080/auth/login',
       client_id: '9165351833584149',
       scope: [
         'profile'
       ],
-      callback: 'http://localhost:8080/auth/callback'
+      callback: 'http://localhost:8080/user/auth/callback'
     })
   ],
   providers: [],

@@ -2,7 +2,7 @@
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-primary fixed-top">
-      <a class="navbar-brand" href="#">Starter</a>
+      <a class="navbar-brand" [routerLink]="['/']">Starter</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -10,13 +10,13 @@
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" [routerLink]="['/']">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item d-none">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" [routerLink]="['/']">Link</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
+            <a class="nav-link disabled" [routerLink]="['/']">Disabled</a>
           </li>
           <li class="nav-item dropdown" dropdown>
             <a id="button-basic" dropdownToggle type="button" class="btn btn-default text-white dropdown-toggle"
@@ -34,10 +34,10 @@
         <form class="form-inline my-2 my-lg-0" *ngIf="user$ | async as user">
           <ng-container [ngSwitch]="user.name !== 'anonymous'">
               <ng-container *ngSwitchCase="false">
-                  <a class="btn btn-outline-light my-2 my-sm-0" [routerLink]="['/auth/login']">Login</a>
+                  <a class="btn btn-outline-light my-2 my-sm-0" [routerLink]="['/user/auth/login']">Login</a>
               </ng-container>
               <ng-container *ngSwitchCase="true">
-                <a class="ml-2 btn btn-outline-warning my-2 my-sm-0" [routerLink]="['/auth/logout']">Logout {{ user.name }}</a>
+                <a class="ml-2 btn btn-outline-warning my-2 my-sm-0" [routerLink]="['/user/auth/logout']">Logout {{ user.name }}</a>
               </ng-container>
           </ng-container>
         </form>

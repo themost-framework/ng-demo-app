@@ -57,7 +57,8 @@
             "browserTarget": "test-ngrx:build",
             "port": 8080,
             "host": "0.0.0.0",
-            "disableHostCheck": true
+            "disableHostCheck": true,
+            "proxyConfig": "proxy.conf.js"
           },
           "configurations": {
             "production": {
