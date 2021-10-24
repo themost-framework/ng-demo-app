@@ -1,6 +1,12 @@
 const {getApplication, serveApplication} = require('@themost/test');
-const app = getApplication();
-serveApplication(app, 3000);
+
+(function serve() {
+  // init test api
+  const app = getApplication();
+  // serve test api
+  serveApplication(app, 3000);
+})();
+
 module.exports = {
     '/api/': {
       target: 'http://localhost:3000/',
