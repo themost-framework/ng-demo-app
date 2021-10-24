@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedUserService } from '../auth/activated-user.service';
+import { ActivatedUserService } from '@themost/angular';
 import { Observable } from 'rxjs';
 
 @Component({

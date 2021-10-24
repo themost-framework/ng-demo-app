@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { StoreModule } from '@ngrx/store';
 import { MostModule } from '@themost/angular';
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from '@themost/angular';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +32,7 @@ import { AuthModule } from './auth/auth.module';
       scope: [
         'profile'
       ],
-      callback: 'https://rapid-client.preview.themost.io/auth/callback'
+      callback: 'http://localhost:8080/auth/callback'
     })
   ],
   providers: [],

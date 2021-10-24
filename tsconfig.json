@@ -16,6 +16,11 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@themost/angular": [
+        "projects/angular/src/public_api"
+      ]
+    }
   }
 }
