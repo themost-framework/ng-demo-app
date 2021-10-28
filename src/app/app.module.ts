@@ -38,7 +38,15 @@ import { FormsModule } from '@angular/forms';
       scope: [
         'profile'
       ],
-      callback: 'http://localhost:8080/user/auth/callback'
+      callback: 'http://localhost:8080/user/auth/callback',
+      locations: [
+        {
+          path: '^/customers',
+          account: 'anonymous',
+          redirectTo: '/user/auth/login',
+          mask: 0
+        }
+      ]
     })
   ],
   providers: [],
