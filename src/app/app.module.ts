@@ -42,7 +42,12 @@ import { FormsModule } from '@angular/forms';
       locations: [
         {
           path: '^/customers',
-          account: 'anonymous',
+          account: 'Administrators',
+          mask: 1
+        },
+        {
+          path: '^/customers',
+          account: '*',
           redirectTo: '/user/auth/login',
           mask: 0
         }

@@ -25,6 +25,7 @@ const routes: Routes = [
       },
       {
         path: 'customers',
+        canActivate: [AuthGuard],
         component: CustomerListComponent
       }
     ]
