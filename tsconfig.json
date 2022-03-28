@@ -17,7 +17,9 @@
       "dom"
     ],
     "paths": {
-      "@themost/angular": ["projects/angular/src/public_api"]
+      "@themost/angular": [
+        "projects/angular/src/public_api"
+      ]
     }
   },
   "angularCompilerOptions": {
