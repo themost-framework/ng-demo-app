@@ -17,6 +17,7 @@
         <th class="border-0" scope="col">Last</th>
         <th class="border-0" scope="col">Email</th>
         <th class="border-0" scope="col">Address</th>
+        <th class="border-0" scope="col">&nbsp;</th>
       </tr>
     </thead>
     <tbody infinite-scroll
@@ -31,6 +32,9 @@
         <td>{{item.email}}</td>
         <td *ngIf="item.address">{{item.address.streetAddress}}, {{item.address.addressLocality}}
           {{item.address.addressCountry}}</td>
+          <td>
+            <a class="btn btn-light" [routerLink]="[item.id, 'view']">View</a>
+          </td>
       </tr>
     </tbody>
     <tfoot>

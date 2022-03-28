@@ -34,8 +34,10 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.18",
+    "@angular-devkit/build-ng-packagr": "^0.1002.0",
     "@angular/cli": "~11.2.18",
     "@angular/compiler-cli": "~11.2.14",
+    "@themost/test": "^1.0.12",
     "@types/jasmine": "~3.6.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^6.0.0",
@@ -46,12 +48,10 @@
     "karma-coverage": "~2.0.3",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.5.0",
+    "ng-packagr": "^13.3.0",
     "protractor": "~7.0.0",
     "ts-node": "~8.3.0",
     "tslint": "~6.1.0",
-    "typescript": "~4.1.5",
-    "@angular-devkit/build-ng-packagr": "^0.1002.0",
-    "ng-packagr": "^13.3.0",
-    "@themost/test": "^1.0.10"
+    "typescript": "~4.1.5"
   }
 }

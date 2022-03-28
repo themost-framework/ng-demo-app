@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthGuard } from 'projects/angular/src/auth';
 import { CustomerListComponent } from './customer-list/customer-list.component';
+import { CustomerViewComponent } from './customer-view/customer-view.component';
 import { LayoutComponent } from './layout/layout.component';
 
 
@@ -25,8 +26,14 @@ const routes: Routes = [
       },
       {
         path: 'customers',
+        pathMatch: 'full',
         canActivate: [AuthGuard],
         component: CustomerListComponent
+      },
+      {
+        path: 'customers/:id/view',
+        canActivate: [AuthGuard],
+        component: CustomerViewComponent
       }
     ]
   }

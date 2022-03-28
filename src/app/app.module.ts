@@ -10,11 +10,13 @@ import { CustomerListComponent } from './customer-list/customer-list.component';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomerViewComponent } from './customer-view/customer-view.component';
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
-    CustomerListComponent
+    CustomerListComponent,
+    CustomerViewComponent
   ],
   imports: [
     BrowserModule,
