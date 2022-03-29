@@ -1,0 +1,35 @@
+<div class="mb-3">
+    <h2>Products</h2>
+  </div>
+  <div>
+    <most-data #products model="Products" [order]="'name'" [skip]="0" [top]="25" [count]="true" ></most-data>
+  <form #f="ngForm" (ngSubmit)="search(searchText)" novalidate>
+    <div class="form-group">
+      <input tabindex="1" type="text" name="search" [(ngModel)]="searchText" class="form-control form-control-lg" id="search" placeholder="search...">
+    </div>
+  </form>
+  </div>
+<div *ngIf="products.value && products.total">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <div class="float-right">Total Items: {{products.total}}</div>
+    </div>
+  </div>
+</div>
+<ng-container *ngIf="products.value" >
+  <div infinite-scroll
+  [infiniteScrollDistance]="2"
+  [infiniteScrollThrottle]="50"
+  (scrolled)="onScrollDown()">
+    <div class="card mb-2" *ngFor="let product of products.value">
+      <div class="card-body">
+          <h2 class="text-secondary font-weight-normal float-right">{{product.price | currency}}</h2>
+         <h5 class="card-title">{{product.name}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{product.category}}</h6>
+        <p class="card-text">{{product.releaseDate | date : 'medium'}}</p>
+        <a href="#" class="card-link">Product link</a>
+      </div>
+    </div>
+  </div>
+    
+</ng-container>

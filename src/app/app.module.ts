@@ -11,12 +11,14 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
+import { ProductListComponent } from './product-list/product-list.component';
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     CustomerListComponent,
-    CustomerViewComponent
+    CustomerViewComponent,
+    ProductListComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,11 @@ import { CustomerViewComponent } from './customer-view/customer-view.component';
           account: '*',
           redirectTo: '/user/auth/login',
           mask: 0
+        },
+        {
+          path: '^/prdoucts',
+          account: '*',
+          mask: 1
         }
       ]
     })

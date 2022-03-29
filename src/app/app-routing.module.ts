@@ -4,6 +4,7 @@ import { AuthGuard } from 'projects/angular/src/auth';
 import { CustomerListComponent } from './customer-list/customer-list.component';
 import { CustomerViewComponent } from './customer-view/customer-view.component';
 import { LayoutComponent } from './layout/layout.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,12 @@ const routes: Routes = [
         path: 'customers/:id/view',
         canActivate: [AuthGuard],
         component: CustomerViewComponent
-      }
+      },
+      {
+        path: 'products',
+        pathMatch: 'full',
+        component: ProductListComponent
+      },
     ]
   }
 ];
